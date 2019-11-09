@@ -25,7 +25,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-7">
-						<form method="post" class="colorlib-form">
+						<form method="post" class="colorlib-form">@csrf
 							<h2>Chi tiết thanh toán</h2>
 							<div class="row">
 								<div class="col-md-6">

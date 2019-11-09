@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\backend;
-
+use App\Http\Requests\AddUserRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,6 +14,9 @@ class UserController extends Controller
     function getAddUser()
     {
         return view('backend.user.adduser');
+    }
+    function postAddUser(AddUserRequest $r){
+
     }
     function getEditUser()
     {

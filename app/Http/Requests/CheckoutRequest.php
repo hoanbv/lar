@@ -13,18 +13,23 @@ class CheckoutRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
-    {
         return [
-            //
-        ];
-    }
+            'full'=>'required|min:7',
+             'email'=>'required|email',
+            'phone'=>'required|min:7|max:11'
+                
+            ];
+        }
+        public function messages()
+        {
+            return [
+            'full.required'=>'Không được để trống Họ Tên',
+            'full.min'=>'Họ Tên Không được nhỏ hơn 7 ký tự',
+            'email.required'=>'Email không được để trống',
+            'email.email'=>'Email Không đúng định dạng',
+            'phone.required'=>'Không được để trống Số Điện thoại',
+            'phone.min'=>'Số Điện thoại không được nhỏ hơn 7 ký tự',
+            'phone.max'=>'Số Điện thoại không được lớn hơn 11 ký tự',
+            ];
+        }
 }
