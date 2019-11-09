@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login</title>
+{{-- <base href="{{''}}"> --}}
 	<link href="backend/css/bootstrap.min.css" rel="stylesheet">
 	
 	<link href="backend/css/styles.css" rel="stylesheet">
@@ -17,20 +18,25 @@
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading">Log in</div>
 				<div class="panel-body">
-					<form role="form">
+					<form role="form" method="POST">@csrf
 						<fieldset>
+								
 							<div class="form-group">
 								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+								{{showError($errors, 'email')}}
 							</div>
 							<div class="form-group">
 								<input class="form-control" placeholder="Password" name="password" type="password" value="">
+								{{showError($errors, 'password')}}
+
 							</div>
 							<div class="checkbox">
 								<label>
 									<input name="remember" type="checkbox" value="Remember Me">Remember Me
 								</label>
 							</div>
-							<a href="index.html" class="btn btn-primary">Login</a>
+							
+							<button class="btn btn-primary" type="submit">Login</button>
 						</fieldset>
 					</form>
 				</div>
