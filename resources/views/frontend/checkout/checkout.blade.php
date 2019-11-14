@@ -31,27 +31,31 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="fname">Họ & Tên</label>
-										<input type="text" id="fname" class="form-control" placeholder="First Name">
+										<input type="text" name="full"  id="fname" value="{{old('full')}}" class="form-control" placeholder="First Name">
+										{{showError($errors, 'full')}}
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="fname">Địa chỉ</label>
-										<input type="text" id="address" class="form-control"
+										<label for="faddress">Địa chỉ</label>
+										<input type="text" name="address" id="faddress" value="{{old('address')}}" class="form-control"
 											placeholder="Nhập địa chỉ của bạn">
 									</div>
+									
 								</div>
 
 								<div class="form-group">
 									<div class="col-md-6">
-										<label for="email">Địa chỉ email</label>
-										<input type="email" id="email" class="form-control"
+										<label for="femail">Địa chỉ email</label>
+									<input type="email" name="email" id="femail" value="{{old('email')}}" class="form-control"
 											placeholder="Ex: youremail@domain.com">
+										{{showError($errors, 'email')}}
 									</div>
 									<div class="col-md-6">
-										<label for="Phone">Số điện thoại</label>
-										<input type="text" id="zippostalcode" class="form-control"
+										<label for="fphone">Số điện thoại</label>
+										<input type="text" name="phone" value="{{old('phone')}}"" id="fphone" class="form-control"
 											placeholder="Ex: 0123456789">
+											{{showError($errors, 'phone')}}	
 									</div>
 								</div>
 								<div class="form-group">
@@ -60,6 +64,12 @@
 									</div>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-md-12">									
+									<input  class="btn btn-primary" type="submit" value="Thanh toán">
+								</div>
+							</div>
+
 						</form>
 					</div>
 					<div class="col-md-5">
@@ -80,7 +90,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<p><a href="order-complete.html" class="btn btn-primary">Thanh toán</a></p>
+								<p><a href="/checkout/complete" class="btn btn-primary">Thanh toán</a></p>
 							</div>
 						</div>
 					</div>

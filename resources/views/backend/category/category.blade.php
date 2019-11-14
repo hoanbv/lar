@@ -39,7 +39,7 @@
 									</div>
 									<div class="form-group">
 										<label for="">Tên Danh mục</label>
-									<input type="text" class="form-control" value="{{old(name)}}" name="name" id="" placeholder="Tên danh mục mới">
+									<input type="text" class="form-control" value="{{old('name')}}" name="name" id="" placeholder="Tên danh mục mới">
 
 										{{showError($errors, 'name')}}
 									</div>
